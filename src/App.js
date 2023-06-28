@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 
 export default function App() {
   // let clickText = 'amila';
-  // const [clickText, setClickText] = useState('tdp');
 
   const [myVar, setMyvar] = useState('Amila');
 
