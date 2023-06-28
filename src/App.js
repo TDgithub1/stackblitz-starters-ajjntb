@@ -5,6 +5,7 @@ export default function App() {
   // let clickText = 'amila';
 
   const [myVar, setMyvar] = useState('Amila');
+  const [inputText, setInputText] = useState('');
 
   const clickHandle = () => {
     // clickText = 'Thisara';
@@ -29,6 +30,19 @@ export default function App() {
       </button>
 
       <p>Start editing to see some magic happen :)</p>
+
+      <input
+        type="text"
+        className="inputbox"
+        placeholder="type what you want"
+        //using anonymus funtion
+        onChange={(e) => {
+          e.preventDefault();
+          setInputText(e.target.value);
+        }}
+      />
+
+      <p>{inputText}</p>
     </div>
   );
 }
