@@ -6,10 +6,18 @@ export default function App() {
 
   const [myVar, setMyvar] = useState('Amila');
   const [inputText, setInputText] = useState('');
+  const [btnText, setBtnText] = useState(0);
 
   const clickHandle = () => {
     // clickText = 'Thisara';
     setMyvar('Thisara');
+  };
+
+  const clickHandle2 = () => {
+    // set time and one at time
+    setTimeout(() => {
+      setBtnText((previousVal) => previousVal + 1);
+    }, 3000); //after 3 second value change
   };
 
   return (
@@ -43,6 +51,20 @@ export default function App() {
       />
 
       <p>{inputText}</p>
+
+      <br />
+      <div>{btnText}</div>
+      <br />
+      <button
+        style={{
+          fontSize: '14px',
+          border: '1px solid blue',
+          padding: '7px 12px',
+        }}
+        onClick={clickHandle2}
+      >
+        add one
+      </button>
     </div>
   );
 }
