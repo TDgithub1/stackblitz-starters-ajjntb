@@ -24,7 +24,7 @@ export default function App() {
     <div>
       <h1>Hello TDP</h1>
 
-      <h2>{myVar}</h2>
+      <h2>Welcome {myVar}</h2>
 
       <button
         style={{
