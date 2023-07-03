@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
+import './app.css';
 
 export default function App() {
   // let clickText = 'amila';
@@ -19,6 +20,16 @@ export default function App() {
       setBtnText((previousVal) => previousVal + 1);
     }, 3000); //after 3 second value change
   };
+
+  // second(main class) section usestate & function
+
+  const [imageUrl, setImageUrl] = useState('');
+  const [name, setName] = useState('');
+  const [city, setCity] = useState('');
+  const [position, setPosition] = useState('');
+  const [myData, setMyData] = useState([]);
+
+  console.log(myData);
 
   return (
     <div>
@@ -65,6 +76,86 @@ export default function App() {
       >
         add one
       </button>
+      <br />
+      <br />
+      <br />
+
+      <div className="main_contanier">
+        <div className="main_left">
+          <input
+            type="text"
+            value={imageUrl}
+            onChange={(e) => {
+              e.preventDefault();
+              setImageUrl(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => {
+              e.preventDefault();
+              setName(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            value={city}
+            onChange={(e) => {
+              e.preventDefault();
+              setCity(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            value={position}
+            onChange={(e) => {
+              e.preventDefault();
+              setPosition(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              // console.log({
+              //   imageUrl,
+              //   name,
+              //   city,
+              //   position,
+              // });
+
+              setMyData((pre) => {
+                return [
+                  ...pre,
+                  {
+                    Image: imageUrl,
+                    name,
+                    city,
+                    position,
+                  },
+                ];
+              });
+
+              setImageUrl((pre) => {
+                if (pre.length > 0) {
+                  return '';
+                } else {
+                  return pre;
+                }
+              });
+
+              setName((pre) => (pre.length > 0 ? '' : pre));
+              // setName(pre => pre.length > 0 ? ("") : (pre)) same thing
+
+              setCity((pre) => (pre.length > 0 ? '' : pre));
+
+              setPosition((pre) => (pre.length > 0 ? '' : pre));
+            }}
+          >
+            submit
+          </button>
+        </div>
+        <div className="main_right"></div>
+      </div>
     </div>
   );
 }
