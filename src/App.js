@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './style.css';
 import './app.css';
 
+import Unit from '../Components/Unit';
+
 export default function App() {
   // let clickText = 'amila';
 
@@ -29,7 +31,7 @@ export default function App() {
   const [position, setPosition] = useState('');
   const [myData, setMyData] = useState([]);
 
-  console.log(myData);
+  // console.log(myData);
 
   return (
     <div>
@@ -80,7 +82,7 @@ export default function App() {
       <br />
       <br />
 
-      <div className="main_contanier">
+      <div className="main__contanier">
         <div className="main_left">
           <input
             type="text"
@@ -127,7 +129,7 @@ export default function App() {
                 return [
                   ...pre,
                   {
-                    Image: imageUrl,
+                    image: imageUrl,
                     name,
                     city,
                     position,
@@ -154,7 +156,17 @@ export default function App() {
             submit
           </button>
         </div>
-        <div className="main_right"></div>
+        <div className="main_right">
+          {myData?.map(({ image, name, city, position }, index) => (
+            <Unit
+              image={image}
+              name={name}
+              city={city}
+              position={position}
+              key={index}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
