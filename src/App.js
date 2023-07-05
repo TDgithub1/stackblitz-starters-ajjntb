@@ -31,6 +31,14 @@ export default function App() {
   const [position, setPosition] = useState('');
   const [myData, setMyData] = useState([]);
 
+  //set above as single use state
+  // const [inputData, setInputData] = useState({
+  //   imageUrl: '',
+  //   name: '',
+  //   city: '',
+  //   position: '',
+  // });
+
   // console.log(myData);
 
   return (
@@ -86,35 +94,81 @@ export default function App() {
         <div className="main_left">
           <input
             type="text"
+            placeholder="Image Url"
             value={imageUrl}
             onChange={(e) => {
               e.preventDefault();
               setImageUrl(e.target.value);
             }}
+
+            //when use single state change
+            // value={inputData.imageUrl}
+            // onChange={(e) => {
+            //   e.preventDefault();
+            //   setInputData(preInputData=> ({
+            //   ...preInputData,
+            //   setImageUrl:e.target.value
+            // }));
+            //  }}
           />
+
           <input
             type="text"
+            placeholder="Type name"
             value={name}
             onChange={(e) => {
               e.preventDefault();
               setName(e.target.value);
             }}
+
+            //when use single state change
+            // value={inputData.name}
+            // onChange={(e) => {
+            //   e.preventDefault();
+            //   setInputData(preInputData=> ({
+            //   ...preInputData,
+            //   name:e.target.value
+            // }));
+            //  }}
           />
+
           <input
             type="text"
+            placeholder="Type City"
             value={city}
             onChange={(e) => {
               e.preventDefault();
               setCity(e.target.value);
             }}
+
+            //when use single state change
+            // value={inputData.city}
+            // onChange={(e) => {
+            //   e.preventDefault();
+            //   setInputData(preInputData=> ({
+            //   ...preInputData,
+            //   city:e.target.value
+            // }));
+            //  }}
           />
           <input
             type="text"
+            placeholder="Type Position"
             value={position}
             onChange={(e) => {
               e.preventDefault();
               setPosition(e.target.value);
             }}
+
+            //when use single state change
+            // value={inputData.position}
+            // onChange={(e) => {
+            //   e.preventDefault();
+            //   setInputData(preInputData=> ({
+            //   ...preInputData,
+            //   position:e.target.value
+            // }));
+            //  }}
           />
           <button
             onClick={() => {
@@ -129,10 +183,11 @@ export default function App() {
                 return [
                   ...pre,
                   {
-                    image: imageUrl,
-                    name,
-                    city,
-                    position,
+                    //when single use state (commented one)
+                    image: imageUrl, //image: inputData.imageUrl,
+                    name, //name: inputData.name,
+                    city, //city: inputData.city,
+                    position, //position:: inputData.position,
                   },
                 ];
               });
@@ -151,6 +206,34 @@ export default function App() {
               setCity((pre) => (pre.length > 0 ? '' : pre));
 
               setPosition((pre) => (pre.length > 0 ? '' : pre));
+
+              //when single use state (commented one)
+
+              // setInputData((pre) => {
+              //   if (pre.imageUrl.length > 0) {
+              //     return {
+              //       ...pre,
+              //       imageUrl:'',
+              //     };
+              //   } else {
+              //     return pre;
+              //   }
+              // });
+
+              // setInputData((pre) => (pre.name.length > 0 ? ({
+              //   ...pre,
+              //   name:'',
+              // }) : pre));
+
+              // setInputData((pre) => (pre.city.length > 0 ? ({
+              //   ...pre,
+              //   city:'',
+              // }) : pre));
+
+              // setInputData((pre) => (pre.position.length > 0 ? ({
+              //   ...pre,
+              //   position:'',
+              // }) : pre));
             }}
           >
             submit
