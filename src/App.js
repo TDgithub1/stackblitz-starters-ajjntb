@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import './style.css';
-import './app.css';
+import './App.css';
 
 import Unit from '../Components/Unit';
+import Header from '../Components/Header';
 
 export default function App() {
   // let clickText = 'amila';
@@ -42,9 +43,8 @@ export default function App() {
   // console.log(myData);
 
   return (
-    <div>
-      <h1>Hello TDP</h1>
-
+    <Fragment>
+      <Header />
       <h2>Welcome {myVar}</h2>
 
       <button
@@ -251,6 +251,6 @@ export default function App() {
           ))}
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 }
