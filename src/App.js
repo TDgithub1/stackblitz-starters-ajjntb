@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import './App.css';
 
@@ -43,7 +43,7 @@ export default function App() {
   // console.log(myData);
 
   return (
-    <Fragment>
+    <div>
       <Header />
       <h2>Welcome {myVar}</h2>
 
@@ -251,6 +251,6 @@ export default function App() {
           ))}
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 }

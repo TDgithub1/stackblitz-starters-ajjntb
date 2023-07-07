@@ -5,34 +5,54 @@ const Header = () => {
 
   return (
     <header className="header__container">
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-      />
-
       <h1>
         Td <span>Dev</span>
       </h1>
       <nav>
-        <img src="" alt=""></img>
-
-        {/* style={{
-            cursor: 'pointer',
-            position: 'relative',
-            right: '20px',
+        <ol
+          style={{
+            listStyle: 'none',
           }}
-
-          onClick{() => {
+        >
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Project</li>
+        </ol>
+        <img
+          className="header__menuClick"
+          src="https://freesvg.org/img/1533918102.png"
+          alt="menu"
+          style={{
+            width: '30px',
+            cursor: 'pointer',
+            // position: 'relative',
+            // right: '20px',
+          }}
+          onClick={() => {
             setMenuClick(true);
           }}
-     */}
+        />
+
         <ul
           style={{
             right: `${menuClick ? '-20px' : '-250px'}`,
+            display: `${menuClick ? 'flex' : 'none'}`,
           }}
         >
-          <div className="header__menuclose">
-            <span class="material-symbols-outlined">close</span>
+          <div
+            className="header__menuclose"
+            onClick={() => {
+              setMenuClick(false);
+            }}
+          >
+            <img
+              src="https://freesvg.org/img/close_icon_black2.png"
+              alt="menuClose"
+              style={{
+                width: '20px',
+              }}
+            />
           </div>
           <div className="header__menu">
             <li>Home</li>

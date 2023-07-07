@@ -27,6 +27,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  transition: all 400ms ease-in;
   list-style: none;
 }
 
@@ -37,6 +38,10 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
+}
+
+.header__container nav ol {
+  display: none;
 }
 
 .header__container .header__menuclose {
@@ -92,4 +97,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media only screen and (min-width: 768px) {
+  .header__container nav ul,
+  .header__container nav .header__menuClick {
+    display: none;
+  }
+  .header__container nav ol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .header__container nav ol li {
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 400ms ease-in;
+  }
+
+  .header__container nav ol li:hover {
+    color: red;
+  }
 }
