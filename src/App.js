@@ -42,6 +42,12 @@ export default function App() {
 
   // console.log(myData);
 
+  // useEffect(() => {
+  //   //react hook,use for api request calling
+
+  //   //return{} clear useeffect hook
+  // },[]);
+
   return (
     <div>
       <Header />
